@@ -4,6 +4,20 @@ import sys
 
 import cv2
 import torch
+
+
+# ------------------------------------------------------------------
+# Repository setup
+# ------------------------------------------------------------------
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+LOCAL_ULTRALYTICS = REPO_ROOT / "yolov8-enhanced-structure"
+
+if LOCAL_ULTRALYTICS.exists():
+    sys.path.insert(0, str(LOCAL_ULTRALYTICS))
+
+
+# Import AFTER local package path is configured.
 from ultralytics import YOLO
 
 

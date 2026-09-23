@@ -16,7 +16,7 @@ def main():
     # 2. Build model from YAML
     print("\n[2] Building model")
 
-    model = YOLO("litehand-yolov8n.yaml")
+    model = YOLO("Litehand-yolov8n.yaml")
 
     print("Model created successfully.")
 
