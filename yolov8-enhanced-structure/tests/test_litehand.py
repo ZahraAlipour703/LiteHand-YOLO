@@ -1,14 +1,12 @@
 from pathlib import Path
+from ultralytics import YOLO
 import torch
 
-from ultralytics import YOLO
-from ultralytics.nn.modules import ECA, CoordAtt
+ROOT = Path(__file__).resolve().parents[1]
 
 
 MODEL_CFG = (
-    Path(__file__).parents[1]
-    /
-    "yolov8-enhanced-structure"
+    ROOT
     /
     "ultralytics"
     /
@@ -22,51 +20,25 @@ MODEL_CFG = (
 )
 
 
-def main():
+print(MODEL_CFG)
 
-    print("=" * 60)
-    print("LiteHand-YOLO verification")
-    print("=" * 60)
+model = YOLO(str(MODEL_CFG))
 
-
-    print("\n[1] Checking modules")
-
-    print(ECA)
-    print(CoordAtt)
-
-
-    print("\n[2] Loading YAML")
-
-    model = YOLO(str(MODEL_CFG))
-
-    print("Model loaded successfully")
+model.info()
+x = torch.zeros(
+    1,
+    3,
+    640,
+    640
+)
 
 
-    print("\n[3] Model summary")
-
-    model.info()
+print("\nRunning forward pass...")
 
 
-    print("\n[4] Forward test")
-
-    x = torch.zeros(
-        1,
-        3,
-        640,
-        640
-    )
-
-    with torch.no_grad():
-
-        output = model.model(x)
+with torch.no_grad():
+    output = model.model(x)
 
 
-    print("Forward pass OK")
-    print(type(output))
-
-
-    print("\nLiteHand-YOLO READY")
-
-
-if __name__ == "__main__":
-    main()
+print("Forward pass successful")
+print(type(output))
