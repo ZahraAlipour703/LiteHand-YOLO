@@ -1,7 +1,7 @@
 # ultra_nano_detect_fixed_fusion.yaml
 task: detect
 nc: 1
-scale: "s"  # small (~5 GFLOPs)
+
 
 # --------------------------
 # Backbone (depth=1, width×0.5 everywhere)
