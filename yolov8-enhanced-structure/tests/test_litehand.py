@@ -1,46 +1,71 @@
+from pathlib import Path
 import torch
 
 from ultralytics import YOLO
 from ultralytics.nn.modules import ECA, CoordAtt
 
 
+MODEL_CFG = (
+    Path(__file__).parents[1]
+    /
+    "yolov8-enhanced-structure"
+    /
+    "ultralytics"
+    /
+    "cfg"
+    /
+    "models"
+    /
+    "v8"
+    /
+    "litehand-yolov8n.yaml"
+)
+
+
 def main():
-    print("Testing LiteHand-YOLO")
+
+    print("=" * 60)
+    print("LiteHand-YOLO verification")
     print("=" * 60)
 
-    # 1. Check custom modules
-    print("\n[1] Custom modules")
-    print("ECA:", ECA)
-    print("CoordAtt:", CoordAtt)
 
-    # 2. Build model from YAML
-    print("\n[2] Building model")
+    print("\n[1] Checking modules")
 
-    model = YOLO("Litehand-yolov8n.yaml")
+    print(ECA)
+    print(CoordAtt)
 
-    print("Model created successfully.")
 
-    # 3. Print model information
-    print("\n[3] Model information")
+    print("\n[2] Loading YAML")
+
+    model = YOLO(str(MODEL_CFG))
+
+    print("Model loaded successfully")
+
+
+    print("\n[3] Model summary")
+
     model.info()
 
-    # 4. Test a forward pass
-    print("\n[4] Forward pass")
+
+    print("\n[4] Forward test")
 
     x = torch.zeros(
         1,
         3,
         640,
-        640,
+        640
     )
 
     with torch.no_grad():
+
         output = model.model(x)
 
-    print("Forward pass successful.")
-    print("Output type:", type(output))
 
-    print("\nLiteHand-YOLO installation test PASSED.")
+    print("Forward pass OK")
+    print(type(output))
+
+
+    print("\nLiteHand-YOLO READY")
 
 
 if __name__ == "__main__":
