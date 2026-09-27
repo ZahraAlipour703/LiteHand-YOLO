@@ -7,7 +7,7 @@ model = YOLO(
 
 
 model.train(
-    data="your_dataset.yaml",
+    data="D:\zra\PROJECTS\Github\LiteHand-YOLO\yolov8-enhanced-structure\egohands_yolo_formatted\data.yaml",
     epochs=1,
     imgsz=640,
     batch=2,
