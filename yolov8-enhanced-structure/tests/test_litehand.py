@@ -1,6 +1,10 @@
 from pathlib import Path
 from ultralytics import YOLO
 import torch
+import ultralytics
+
+print("Ultralytics loaded from:")
+print(ultralytics.__file__)
 
 ROOT = Path(__file__).resolve().parents[1]
 
