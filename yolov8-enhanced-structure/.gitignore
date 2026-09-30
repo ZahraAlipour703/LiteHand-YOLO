@@ -174,3 +174,49 @@ pnnx*
 
 # calibration image
 calibration_*.npy
+
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Datasets
+datasets/
+data/
+egohands_yolo_formatted/
+*.zip
+*.rar
+
+# Training / experiment outputs
+runs/
+results/
+wandb/
+mlruns/
+
+# Model weights
+*.pt
+*.pth
+*.onnx
+*.engine
+*.tflite
+*.torchscript
+
+# Logs
+*.log
+
+# Temporary / generated files
+*.tmp
+*.bak
