@@ -1,4 +1,4 @@
-# Ultra-Nano YOLO Detector
+# LiteHand-YOLO
 
 A lightweight single-class object detection architecture based on the Ultralytics YOLO framework, designed for efficient real-time detection under constrained computational resources.
 
