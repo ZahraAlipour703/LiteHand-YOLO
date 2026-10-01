@@ -1,8 +1,8 @@
 # LiteHand-YOLO
 
-A lightweight single-class object detection architecture based on the Ultralytics YOLO framework, designed for efficient real-time detection under constrained computational resources.
+Efficient Attention-Enhanced YOLOv8n for Robust Hand Tracking
 
-The model combines **depthwise convolutions, lightweight attention, C2f feature extraction, SPPF contextual aggregation, and bidirectional multi-scale feature fusion** while retaining the standard YOLO-style P3/P4/P5 detection hierarchy.
+LiteHand-YOLO is a lightweight, single-class hand detection model built by modifying the Ultralytics YOLO framework. The architecture is designed to reduce model complexity while preserving multi-scale detection capability for real-time hand tracking applications, particularly on resource-constrained hardware.
 
 ---
 
