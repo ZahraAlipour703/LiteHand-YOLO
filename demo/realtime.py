@@ -134,7 +134,7 @@ def main():
     # Run prediction
     # --------------------------------------------------------------
 
-    results = model.predict(
+    for _ in model.predict(
         source=source,
         imgsz=args.imgsz,
         conf=args.conf,
@@ -142,10 +142,10 @@ def main():
         show=True,
         save=args.save,
         project=str(REPO_ROOT / args.output),
+        stream=True,
         verbose=False
-    )
-
-    return results
+        ):
+            pass
 
 
 if __name__ == "__main__":
