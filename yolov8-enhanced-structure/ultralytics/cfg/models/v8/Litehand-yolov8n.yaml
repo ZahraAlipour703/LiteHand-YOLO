@@ -1,10 +1,7 @@
-# ultra_nano_detect_fixed_fusion.yaml
+# LiteHand-YOLO
 task: detect
 nc: 1
-scale: "s"  # small (~5 GFLOPs)
 
-# --------------------------
-# Backbone (depth=1, width×0.5 everywhere)
 # --------------------------
 backbone:
   - [-1, 1, Conv,     [16, 3, 2]]    # 0: P1/2
